@@ -1,4 +1,4 @@
-import { type ReactNode, useState, useEffect, useCallback } from 'react';
+import { type ReactNode, useCallback, useEffect, useState } from 'react';
 
 interface AppLayoutProps {
   timerSection: ReactNode;
@@ -23,7 +23,7 @@ export function AppLayout({ timerSection, settingsSection }: AppLayoutProps) {
   }, []);
 
   return (
-    <div className="h-full bg-gray-950 text-white flex flex-col overflow-hidden">
+    <div className="flex overflow-hidden flex-col h-full text-white bg-gray-950">
       {/* Header — fixed height, never shrinks */}
       <header className="shrink-0 px-4 py-2.5 border-b border-white/5 bg-gray-950/80 backdrop-blur-sm relative flex items-center justify-center">
         <h1
@@ -34,7 +34,7 @@ export function AppLayout({ timerSection, settingsSection }: AppLayoutProps) {
             <circle cx="100" cy="100" r="100" fill="#EF4444"/>
             <path d="M35 105 H70 L85 75 L105 130 L120 95 H165" stroke="white" strokeWidth="12" strokeLinecap="round" strokeLinejoin="round"/>
           </svg>
-          Beat<span className="text-red-500">Flow</span>
+          <span>Beat<span className="text-red-500">Flow</span></span>
         </h1>
         <button
           onClick={toggleFullscreen}
@@ -56,7 +56,7 @@ export function AppLayout({ timerSection, settingsSection }: AppLayoutProps) {
       </header>
 
       {/* Main — fills remaining height, no page scroll */}
-      <main className="flex-1 flex flex-col md:flex-row overflow-hidden min-h-0">
+      <main className="flex overflow-hidden flex-col flex-1 min-h-0 md:flex-row">
         {/* Timer column — centered, non-scrolling */}
         <div className="flex-1 md:flex-[55] flex flex-col items-center justify-center p-4 md:p-6 overflow-hidden">
           {timerSection}
@@ -64,7 +64,7 @@ export function AppLayout({ timerSection, settingsSection }: AppLayoutProps) {
 
         {/* Settings + Favorites column — only this scrolls */}
         <div className="md:flex-[45] shrink-0 border-t md:border-t-0 md:border-l border-white/5 overflow-y-auto">
-          <div className="p-4 md:p-5 space-y-5">
+          <div className="p-4 space-y-5 md:p-5">
             {settingsSection}
           </div>
         </div>
