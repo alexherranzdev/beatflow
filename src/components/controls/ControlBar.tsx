@@ -20,7 +20,7 @@ export function ControlBar({ phase, isPaused, onStart, onPause, onResume, onStop
   const btnPad = 'py-[clamp(0.65rem,2.5vh,1.1rem)] rounded-2xl';
 
   return (
-    <div className="flex gap-3 items-center mt-4 w-full" style={{ fontFamily: "'Barlow Condensed', sans-serif" }}>
+    <div className="flex gap-3 items-center mt-8 w-full" style={{ fontFamily: "'Barlow Condensed', sans-serif" }}>
       {(isIdle || isDone) && (
         <button
           onClick={onStart}
