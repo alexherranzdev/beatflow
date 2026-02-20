@@ -27,9 +27,13 @@ export function AppLayout({ timerSection, settingsSection }: AppLayoutProps) {
       {/* Header — fixed height, never shrinks */}
       <header className="shrink-0 px-4 py-2.5 border-b border-white/5 bg-gray-950/80 backdrop-blur-sm relative flex items-center justify-center">
         <h1
-          className="text-lg tracking-[0.25em] uppercase text-center text-white/70 font-semibold"
+          className="flex items-center gap-2 text-lg tracking-[0.25em] uppercase text-center text-white/70 font-semibold"
           style={{ fontFamily: "'Barlow Condensed', sans-serif", fontWeight: 800 }}
         >
+          <svg width="22" height="22" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="100" cy="100" r="100" fill="#EF4444"/>
+            <path d="M35 105 H70 L85 75 L105 130 L120 95 H165" stroke="white" strokeWidth="12" strokeLinecap="round" strokeLinejoin="round"/>
+          </svg>
           Beat<span className="text-red-500">Flow</span>
         </h1>
         <button
