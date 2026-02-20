@@ -1,0 +1,47 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  *, *::before, *::after {
+    box-sizing: border-box;
+  }
+
+  html {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    /* Prevent iOS bounce-scroll on the root */
+    overscroll-behavior: none;
+  }
+
+  body {
+    margin: 0;
+    background-color: #030712;
+    color: #fff;
+    font-family: 'Barlow', system-ui, sans-serif;
+    /* Lock body height to viewport — no page scroll */
+    height: 100dvh;
+    overflow: hidden;
+  }
+
+  #root {
+    height: 100%;
+  }
+}
+
+@layer utilities {
+  .animate-fade-in-scale {
+    animation: fadeInScale 0.3s ease-out both;
+  }
+}
+
+@keyframes fadeInScale {
+  from {
+    opacity: 0;
+    transform: scale(0.85);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
